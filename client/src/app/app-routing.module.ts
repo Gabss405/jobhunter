@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { JobAppListComponent } from './job-app-list/job-app-list.component';
 import { JobAppFormComponent } from './job-app-form/job-app-form.component';
-import { JobStageItemComponent } from './job-stage-item/job-stage-item.component';
+import { JobStageItemComponent } from './job-stage-form/job-stage-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 // import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: JobAppListComponent },
   // { path: '', component: LoginComponent},
   // { path: 'login', component: LoginComponent},
