@@ -1,11 +1,11 @@
-const { Client } = require('pg');
-const dotenv = require('dotenv');
+import { Client } from 'pg';
+import * as dotenv from 'dotenv';
 dotenv.config();
 
 const db_password = process.env.DB_PASSWORD;
 const db_user = process.env.DB_USER;
 const db_name = process.env.DB_NAME;
-const db_port = process.env.DB_PORT;
+const db_port: number = parseInt(<string>process.env.DB_PORT) || 5432;
 
 const client = new Client({
   user: `${db_user}`,
@@ -18,6 +18,6 @@ const client = new Client({
 client
   .connect()
   .then(() => console.log('connected to DB'))
-  .catch((err) => console.error('connection error ' + err));
+  .catch((err: Error) => console.error('connection error ' + err));
 
-module.exports = client;
+export default client;
